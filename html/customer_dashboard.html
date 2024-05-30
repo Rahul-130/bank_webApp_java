@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customer Dashboard</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h2 class="text-center">Customer Dashboard</h2>
+      <div class="card mt-3">
+        <div class="card-header">Customer Details</div>
+        <div class="card-body">
+          <form id="customerDetailsForm">
+            <div class="mb-3">
+              <label for="customerName" class="form-label">Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="customerName"
+                readonly
+              />
+            </div>
+            <div class="mb-3">
+              <label for="accountNumber" class="form-label"
+                >Account Number</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="accountNumber"
+                readonly
+              />
+            </div>
+            <div class="mb-3">
+              <label for="balance" class="form-label">Account Balance</label>
+              <input type="text" class="form-control" id="balance" readonly />
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="card mt-3">
+        <div class="card-header">Deposit Money</div>
+        <div class="card-body">
+          <form id="depositForm">
+            <div class="mb-3">
+              <label for="depositAmount" class="form-label">Amount</label>
+              <input type="number" class="form-control" id="depositAmount" />
+            </div>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="depositMoney()"
+            >
+              Deposit
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="card mt-3">
+        <div class="card-header">Withdraw Money</div>
+        <div class="card-body">
+          <form id="withdrawForm">
+            <div class="mb-3">
+              <label for="withdrawAmount" class="form-label">Amount</label>
+              <input type="number" class="form-control" id="withdrawAmount" />
+            </div>
+            <button
+              type="button"
+              class="btn btn-danger"
+              onclick="withdrawMoney()"
+            >
+              Withdraw
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Fetch customer details from server and populate form
+        fetchCustomerDetails();
+      });
+
+      function fetchCustomerDetails() {
+        // Make a request to the backend to get customer details
+        // This is a placeholder function
+        const customerDetails = {
+          name: "John Doe",
+          accountNumber: "123456789",
+          balance: "5000",
+        };
+
+        document.getElementById("customerName").value = customerDetails.name;
+        document.getElementById("accountNumber").value =
+          customerDetails.accountNumber;
+        document.getElementById("balance").value = customerDetails.balance;
+      }
+
+      function depositMoney() {
+        const amount = document.getElementById("depositAmount").value;
+        // Make a request to the backend to deposit money
+        // Update balance after deposit
+        alert("Money deposited successfully!");
+        fetchCustomerDetails(); // Refresh customer details
+      }
+
+      function withdrawMoney() {
+        const amount = document.getElementById("withdrawAmount").value;
+        // Make a request to the backend to withdraw money
+        // Update balance after withdrawal
+        alert("Money withdrawn successfully!");
+        fetchCustomerDetails(); // Refresh customer details
+      }
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

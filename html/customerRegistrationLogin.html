@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <h1 class="text-center p-5 display-5">BANKING</h1>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/customerRegisterLogin.css" />
+    <title>Registration and Login</title>
+  </head>
+
+  <body>
+    <div class="container" id="container">
+      <div class="form-container sign-up">
+        <!-- Create Account -->
+        <form id="registrationForm">
+          <h2>Create Account</h2>
+          <input
+            id="ssnId"
+            type="number"
+            placeholder="SSID number"
+            maxlength="7"
+            required
+          />
+          <div class="d-flex gap-2">
+            <input
+              id="firstName"
+              type="text"
+              placeholder="First Name"
+              maxlength="50"
+              required
+            />
+            <input
+              id="lastName"
+              type="text"
+              placeholder="last Name"
+              maxlength="50"
+              required
+            />
+          </div>
+          <input id="email" type="email" placeholder="Email" required />
+          <div class="d-flex gap-2">
+            <input
+              id="password"
+              type="password"
+              placeholder="Password"
+              maxlength="30"
+              required
+            />
+            <input
+              id="confirmPassword"
+              type="password"
+              placeholder="Password"
+              maxlength="30"
+              required
+            />
+          </div>
+          <input name="" id="address" placeholder="Address" required />
+          <input
+            id="contactNumber"
+            type="text"
+            placeholder="Mobile number"
+            maxlength="10"
+            required
+          />
+          <button type="submit" class="btn">Register</button>
+        </form>
+        <!-- acknowledgment for successful registration -->
+        <div id="acknowledgment" class="">
+          <p class="text-success">Customer Registration successful.</p>
+          <p>Customer Account Id: <span id="accountId"></span></p>
+          <p>Customer Name: <span id="customerName"></span></p>
+          <a href="customerRegistrationLogin.html" class="btn btn-secondary"
+            >Go to Login</a
+          >
+        </div>
+      </div>
+      <div class="form-container sign-in">
+        <!-- login form -->
+        <form id="loginForm">
+          <h2>Sign In</h2>
+
+          <input
+            type="text"
+            id="accountNumber"
+            placeholder="Customer Account Number"
+            required
+          />
+          <input
+            type="password"
+            id="password"
+            placeholder="Password"
+            maxlength="30"
+            required
+          />
+          <a href="#">Forget Your Password?</a>
+          <button type="submit">Login</button>
+        </form>
+        <!-- acknowledgment for successful login -->
+        <div id="loginAcknowledgment" class="mt-3" style="display: none">
+          <p class="text-success">Customer login successful.</p>
+        </div>
+      </div>
+      <!-- toggle -->
+      <div class="toggle-container">
+        <div class="toggle">
+          <div class="toggle-panel toggle-left">
+            <h2>Welcome Back !</h2>
+            <p>Enter your personal details to use all of site features</p>
+            <button class="hidden" id="login">Sign In</button>
+          </div>
+          <div class="toggle-panel toggle-right">
+            <h2>Dear customer</h2>
+            <p>
+              we value your decision to associate with us as your prefered
+              banking partner you are welcome to open an online Account
+            </p>
+            <p>Enter your personal details to use all of site features</p>
+            <button class="hidden" id="register">Sign Up</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../javascript/registrationAcknowledgment.js"></script>
+    <script src="../javascript/login.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
